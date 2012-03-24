@@ -1,10 +1,7 @@
 " ---------------------------------------------------- "
-"[ call pathogen ]"
-
-call pathogen#runtime_append_all_bundles()
-
+"[ Load Script ]"
 " ---------------------------------------------------- "
-"[ Script Configure ]"
 
-source ~/.vim/startup/color.vim
-source ~/.vim/startup/setting.vim
+source $HOME/.vim/startup/color.vim
+source $HOME/.vim/startup/bundle.vim
+source $HOME/.vim/startup/config.vim
