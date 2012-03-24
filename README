@@ -1,0 +1,10 @@
+WHAT IS THIS:
+This repository compose my dotfiles(ex, .bashrc, .vimrc, .tmux.conf etc...).
+I make this repository for myself.
+
+HOW TO USE:
+$ ln -s path/to/dotfiles/.bashrc $HOME/
+$ ln -s path/to/dotfiles/.vimrc $HOME/
+$ ln -s path/to/dotfiles/.vim $HOME/
+$ ln -s path/to/dotfiles/.tmux.conf $HOME/
+
