@@ -1,0 +1,12 @@
+[user]
+	name = yoan
+	email = motoki.yoan@gmail.com
+[color]
+	ui = true
+[alias]
+	br = branch
+	ci = commit
+	co = checkout
+	st = status
+[core]
+	excludesfile = ~/.gitconfig

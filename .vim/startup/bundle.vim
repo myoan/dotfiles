@@ -18,11 +18,12 @@ NeoBundle 'Shougo/unite.vim'
 
 " [vim.org plugins] "
 NeoBundle 'yanktmp.vim'
-"NeoBundle 'YankRing.vim'
-NeoBundle 'surround.vim'
+NeoBundle 'YankRing.vim'
+"NeoBundle 'surround.vim'
 
 " [row plugins] "
 NeoBundle 'global/gtags.vim'
+NeoBundle 'vim-latex'
 
 filetype plugin on
 filetype indent on

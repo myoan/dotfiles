@@ -1,0 +1,12 @@
+# this is igore files for git
+
+## GTAGS
+GPATH
+GRTAGS
+GTAGS
+
+## vim backup file
+*~
+
+## object file
+*.o
