@@ -1,0 +1,35 @@
+"
+" yoan's vimperator config.
+"
+" ----------------------------------------------------------------------------------- "
+" [key config] "
+
+noremap j 5<c-e>
+noremap k 5<c-y>
+
+map h gT
+map l gt
+
+" ----------------------------------------------------------------------------------- "
+" [colorscheme] "
+
+"colorscheme sweets
+"colorscheme sweets_snaka  "it uses too big fonts
+"colorscheme sweets_snaka
+colorscheme personas
+
+" ----------------------------------------------------------------------------------- "
+" [other config] "
+
+" use google suggestion
+set complete=bS
+
+" use hints with charactor
+set hintchars=lasdfjk;
+
+" list plugin loader roots.
+let g:plugin_loader_roots = "~/.vimperator/vimperator-plugins/"
+" list plugin
+let g:plugin_loader_plugins = "_libly,feedSomeKeys_3,statusline-toolbar,ldrize_cooperation,migemo_completion"
+"let g:plugin_loader_plugins = "happy_hacking_vimperator"
+

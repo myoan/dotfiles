@@ -7,7 +7,7 @@
 set encoding=utf-8
 set number
 set title
-"set expandtab
+set expandtab
 set list
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:$
 set ts=4
@@ -86,3 +86,4 @@ let g:Tex_ViewRule_dvi = 'xdvi'
 " -------------------------------------------------- "
 " [neocomplcache] "
 source $HOME/.vim/startup/complcache.vim
+let g:neocomplcache_snippets_dir = '~/.vim/snippets'
