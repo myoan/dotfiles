@@ -7,19 +7,24 @@
 set encoding=utf-8
 set number
 set title
-set expandtab
+"set expandtab
 set list
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:$
 set ts=4
 set shiftwidth=4
 set autoindent smartindent
-set cursorline
 set noswapfile
 
 map <c-a> ^
 map <c-e> $
 nnoremap j gj
 nnoremap k gk
+
+" -------------------------------------------------- "
+" [ js config ] "
+autocmd FileType javascript setl ts=2
+autocmd FileType javascript setl expandtab
+autocmd FileType javascript noremap <buffer> <C-m> :<C-u>!/usr/local/bin/gjslint %<cr>
 
 " -------------------------------------------------- "
 " [ search config ] "

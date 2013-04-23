@@ -8,24 +8,26 @@ if has('vim_starting')
 	call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
+NeoBundleFetch 'Shougo/neobundle.vim'
+
 " [git plugins] "
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neocomplcache-snippets-complete'
+NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'Lokaltog/vim-powerline'
 "NeoBundle 'Shougo/vimshell'
 
 " [vim.org plugins] "
 NeoBundle 'yanktmp.vim'
 NeoBundle 'YankRing.vim'
 NeoBundle 'sudo.vim'
-"NeoBundle 'surround.vim'
 
 " [row plugins] "
 NeoBundle 'global/gtags.vim'
-NeoBundle 'vim-latex'
-NeoBundle 'vimperator'
+"NeoBundle 'vimperator'
 
 filetype plugin on
 filetype indent on
