@@ -1,5 +1,17 @@
 # Path to your oh-my-zsh configuration.
+export EDITOR=vim
+export LANG=ja_JP.UTF-8
 ZSH=$HOME/.oh-my-zsh
+bindkey -v
+
+setopt no_beep
+setopt correct
+setopt magic_equal_subst
+setopt prompt_subst
+
+autoload -U compinit; compinit
+setopt auto_list
+setopt auto_menu
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/

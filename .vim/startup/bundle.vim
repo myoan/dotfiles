@@ -18,6 +18,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'jimenezrick/vimerl.git'
 "NeoBundle 'Shougo/vimshell'
 
 " [vim.org plugins] "
@@ -26,7 +27,7 @@ NeoBundle 'YankRing.vim'
 NeoBundle 'sudo.vim'
 
 " [row plugins] "
-NeoBundle 'global/gtags.vim'
+NeoBundle 'vim-scripts/gtags.vim'
 "NeoBundle 'vimperator'
 
 filetype plugin on
