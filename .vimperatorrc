@@ -19,6 +19,16 @@ map l gt
 colorscheme personas
 
 " ----------------------------------------------------------------------------------- "
+" [complete] "
+com! -complete=bookmark -nargs=+ ob :o <args>
+com! -complete=history -nargs=+ oh :o <args>
+com! -complete=search -nargs=+ os :o <args>
+
+map <C-b> :ob 
+map <C-s> :os 
+map <C-h> :oh 
+
+" ----------------------------------------------------------------------------------- "
 " [other config] "
 
 " use google suggestion
@@ -32,4 +42,6 @@ let g:plugin_loader_roots = "~/.vimperator/vimperator-plugins/"
 " list plugin
 let g:plugin_loader_plugins = "_libly,feedSomeKeys_3,statusline-toolbar,ldrize_cooperation,migemo_completion"
 "let g:plugin_loader_plugins = "happy_hacking_vimperator"
+set toolbars=nonavigation
+
 

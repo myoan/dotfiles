@@ -15,17 +15,17 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'Lokaltog/vim-powerline'
 "NeoBundle 'Shougo/vimshell'
 
 " [vim.org plugins] "
 NeoBundle 'yanktmp.vim'
 NeoBundle 'YankRing.vim'
 NeoBundle 'sudo.vim'
-"NeoBundle 'surround.vim'
 
 " [row plugins] "
 NeoBundle 'global/gtags.vim'
-NeoBundle 'vim-latex'
 "NeoBundle 'vimperator'
 
 filetype plugin on
