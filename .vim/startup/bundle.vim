@@ -8,15 +8,13 @@ if has('vim_starting')
 	call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
+let g:neobundle_default_git_protocol='git'
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " [git plugins] "
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'Lokaltog/vim-powerline'
 "NeoBundle 'Shougo/vimshell'
 

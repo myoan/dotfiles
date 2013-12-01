@@ -5,8 +5,10 @@
 	ui = true
 [alias]
 	br = branch
-	ci = commit
+	ci = commit -a
 	co = checkout
 	st = status
+	di = diff
 [core]
 	excludesfile = ~/.gitconfig
+	editor = /usr/bin/vim

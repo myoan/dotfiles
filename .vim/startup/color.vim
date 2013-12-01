@@ -1,6 +1,4 @@
 syntax enable
 syntax on
-let g:solarized_termcolors=16
-let g:solarized_termtrans = 1
+colorscheme desert
 set background=dark
-colorscheme solarized

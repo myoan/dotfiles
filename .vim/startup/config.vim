@@ -25,6 +25,11 @@ nnoremap k gk
 autocmd FileType javascript setl ts=2
 autocmd FileType javascript setl expandtab
 autocmd FileType javascript noremap <buffer> <C-m> :<C-u>!/usr/local/bin/gjslint %<cr>
+" -------------------------------------------------- "
+" [ ruby config ] "
+autocmd FileType ruby setl expandtab
+autocmd FileType ruby setl shiftwidth=2
+autocmd FileType ruby setl ts=2
 
 " -------------------------------------------------- "
 " [ search config ] "
@@ -55,8 +60,8 @@ nmap <c-g> :Gtags
 
 " -------------------------------------------------- "
 " [yanktmp config] "
-map <silent> sy :call YanktmpYank()<CR> 
-map <silent> sp :call YanktmpPaste_p()<CR> 
+map <silent> ty :call YanktmpYank()<CR> 
+map <silent> tp :call YanktmpPaste_p()<CR> 
 
 " -------------------------------------------------- "
 " [yankring config] "
