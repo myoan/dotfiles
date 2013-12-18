@@ -29,6 +29,11 @@ autocmd FileType javascript setl ts=2
 autocmd FileType javascript setl expandtab
 autocmd FileType javascript setl shiftwidth=2
 autocmd FileType javascript noremap <buffer> <C-m> :<C-u>!/usr/local/bin/gjslint %<cr>
+" -------------------------------------------------- "
+" [ ruby config ] "
+autocmd FileType ruby setl expandtab
+autocmd FileType ruby setl shiftwidth=2
+autocmd FileType ruby setl ts=2
 
 " -------------------------------------------------- "
 " [ ruby config ] "
