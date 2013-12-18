@@ -13,11 +13,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " [git plugins] "
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'Lokaltog/vim-powerline'
-"NeoBundle 'Shougo/vimshell'
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'thinca/vim-quickrun'
 
 " [vim.org plugins] "
 NeoBundle 'yanktmp.vim'
@@ -25,7 +24,7 @@ NeoBundle 'YankRing.vim'
 NeoBundle 'sudo.vim'
 
 " [row plugins] "
-NeoBundle 'global/gtags.vim'
+"NeoBundle 'global/gtags.vim'
 "NeoBundle 'vimperator'
 
 filetype plugin on

@@ -1,5 +1,7 @@
 # this is igore files for git
 
+.vim/bundle
+
 ## GTAGS
 GPATH
 GRTAGS

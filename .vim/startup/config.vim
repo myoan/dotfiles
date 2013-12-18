@@ -10,8 +10,9 @@ set title
 "set expandtab
 set list
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:$
-set ts=4
-set shiftwidth=4
+set ts=2
+set shiftwidth=2
+set expandtab
 set autoindent smartindent
 set noswapfile
 
@@ -19,12 +20,27 @@ map <c-a> ^
 map <c-e> $
 nnoremap j gj
 nnoremap k gk
+set ignorecase
+set wildmode=longest:full,full
 
 " -------------------------------------------------- "
 " [ js config ] "
 autocmd FileType javascript setl ts=2
 autocmd FileType javascript setl expandtab
+autocmd FileType javascript setl shiftwidth=2
 autocmd FileType javascript noremap <buffer> <C-m> :<C-u>!/usr/local/bin/gjslint %<cr>
+
+" -------------------------------------------------- "
+" [ ruby config ] "
+autocmd FileType ruby setl ts=2
+autocmd FileType ruby setl expandtab
+autocmd FileType ruby setl shiftwidth=2
+
+" -------------------------------------------------- "
+" [ perl config ] "
+autocmd FileType perl setl ts=4
+autocmd FileType perl setl expandtab
+autocmd FileType perl setl shiftwidth=4
 
 " -------------------------------------------------- "
 " [ search config ] "
@@ -55,8 +71,8 @@ nmap <c-g> :Gtags
 
 " -------------------------------------------------- "
 " [yanktmp config] "
-map <silent> sy :call YanktmpYank()<CR> 
-map <silent> sp :call YanktmpPaste_p()<CR> 
+map <silent> ty :call YanktmpYank()<CR> 
+map <silent> tp :call YanktmpPaste_p()<CR> 
 
 " -------------------------------------------------- "
 " [yankring config] "
@@ -92,3 +108,8 @@ let g:Tex_ViewRule_dvi = 'xdvi'
 " [neocomplcache] "
 source $HOME/.vim/startup/complcache.vim
 let g:neocomplcache_snippets_dir = '~/.vim/snippets'
+
+" -------------------------------------------------- "
+" [vim-markdown] "
+" 畳み込み禁止
+let g:vim_markdown_folding_disabled=1 
