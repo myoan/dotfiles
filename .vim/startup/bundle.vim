@@ -14,6 +14,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " [git plugins] "
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'thinca/vim-quickrun'
