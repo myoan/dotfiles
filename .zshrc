@@ -38,3 +38,25 @@ source $ZSH/oh-my-zsh.sh
 
 PATH=/usr/local/bin:$PATH
 alias g='ssh gate'
+export PATH="$HOME/.rbenv/shims:$PATH"
+
+alias peco='peco --layout=bottom-up'
+alias -g p='| peco'
+
+function peco-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(\history -n 1 | \
+        eval $tac | \
+        peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"

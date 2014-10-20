@@ -12,3 +12,6 @@ GTAGS
 
 ## object file
 *.o
+
+.vim/tmp/*
+!.gitkeep
