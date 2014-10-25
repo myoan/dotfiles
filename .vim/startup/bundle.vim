@@ -31,7 +31,7 @@ NeoBundle 'kien/ctrlp.vim'
 
 " [vim.org plugins] "
 NeoBundle 'yanktmp.vim'
-NeoBundle 'YankRing.vim'
+"NeoBundle 'YankRing.vim'
 NeoBundle 'sudo.vim'
 
 " [row plugins] "

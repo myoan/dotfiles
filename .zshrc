@@ -34,6 +34,9 @@ ZSH_THEME="sorin"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git ssh-agent ruby gem)
 
+HISTSIZE=100000
+SAVEHIST=100000
+
 source $ZSH/oh-my-zsh.sh
 
 PATH=/usr/local/bin:$PATH

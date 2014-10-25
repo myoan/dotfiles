@@ -87,9 +87,9 @@ nnoremap <C-f><C-H> <C-w>H
 " -------------------------------------------------- "
 " [global config] "
 " close search result
-nmap <C-q> <C-w><C-w><C-w>q
+"nmap <C-q> <C-w><C-w><C-w>q
 " use gtags
-nmap <c-g> :Gtags 
+"nmap <c-g> :Gtags 
 " move next search results.
 "nmap <C-n> :cn<CR>
 " move previous search results.
@@ -110,6 +110,7 @@ let g:yankring_history_dir = '~/.vim/tmp'
 " [Unite] "
 "let g:unite_enable_split_vertically=1
 nnoremap [unite] <Nop>
+let g:unite_enable_start_insert=1
 "map <Leader>u [unite]
 noremap <C-f><C-n> :<C-u>Unite buffer<Space>
 
@@ -176,3 +177,20 @@ map <C-t><C-a> :call RunAllSpecs()<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+" -------------------------------------------------- "
+" [quick-run] "
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+
+" -------------------------------------------------- "
+" [fugitive] "
+" git status
+nmap <c-g>s :Gstatus<cr>
+" git add
+nmap <c-g>a :Gwrite<cr>
+" git commit
+nmap <c-g>ci :Gcommit<cr>
+" git diff
+nmap <c-g>d :Gdiff<cr>
