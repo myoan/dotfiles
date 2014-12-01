@@ -32,7 +32,7 @@ ZSH_THEME="sorin"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ssh-agent ruby gem)
+plugins=(git ssh-agent ruby gem zsh-syntax-highlighting anyframe)
 
 HISTSIZE=100000
 SAVEHIST=100000
@@ -63,3 +63,39 @@ zle -N peco-select-history
 bindkey '^r' peco-select-history
 export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
+
+export PATH="$HOME/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/chef-zero-3.2/bin:$PATH"
+export PATH="$HOME/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/chef-11.16.4/bin/:$PATH"
+
+#########################################
+# cdr config
+#########################################
+
+autoload -Uz is-at-least
+if is-at-least 4.3.11
+then
+  autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+  add-zsh-hook chpwd chpwd_recent_dirs
+  zstyle ':chpwd:*' recent-dirs-max 5000
+  zstyle ':chpwd:*' recent-dirs-default yes
+  zstyle ':completion:*' recent-dirs-insert both
+fi
+
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+
+#########################################
+# peco-tmux config
+#########################################
+
+function peco-tmux () {
+  local i=$(tmux lsw | awk '/active.$/ {print NR-1}')
+  local f='#{window_index}: #{window_name}#{window_flag} #{pane_current_path}'
+  tmux lsw -F "$f"                                  \
+    | anyframe-selector-auto "" --initial-index $i  \
+    | cut -d ':' -f 1                               \
+    | anyframe-action-execute tmux select-window -t
+}
+
+zle -N peco-tmux
+bindkey '^t' peco-tmux

@@ -31,6 +31,11 @@ set wildmenu wildmode=list:longest,full
 set history=10000
 filetype plugin on
 
+highlight SpecialKey ctermfg=lightgray                    " タブの色
+highlight NonText ctermfg=darkgray                       " 改行の色
+highlight ZenkakuSpace cterm=underline ctermfg=white  " 全角スペースの色
+match ZenkakuSpace /　/
+
 " -------------------------------------------------- "
 " [ js config ] "
 autocmd FileType javascript setl ts=2
@@ -101,10 +106,20 @@ nnoremap <C-f><C-H> <C-w>H
 map <silent> ty :call YanktmpYank()<CR> 
 map <silent> tp :call YanktmpPaste_p()<CR> 
 
+"" -------------------------------------------------- "
+"" [yankring config] "
+"let g:yankring_manual_clipboard_check=0
+"let g:yankring_history_dir = '~/.vim/tmp'
+
 " -------------------------------------------------- "
-" [yankring config] "
-let g:yankring_manual_clipboard_check=0
-let g:yankring_history_dir = '~/.vim/tmp'
+" [yankound config] "
+let g:yankround_max_history = 10000
+nmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap gp <Plug>(yankround-gp)
+nmap gP <Plug>(yankround-gP)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
 
 " -------------------------------------------------- "
 " [Unite] "
@@ -172,16 +187,17 @@ map <C-t><C-l> :call RunLastSpec()<CR>
 map <C-t><C-a> :call RunAllSpecs()<CR>
 
 " -------------------------------------------------- "
-" [ctlp] "
+" [ctrlp] "
 
-let g:ctrlp_map = '<c-p>'
+let g:ctrlp_working_path_mode = 'a'
+let g:ctrlp_map = '<c-b>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " -------------------------------------------------- "
 " [quick-run] "
 
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+"let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlP'
 
 
 " -------------------------------------------------- "
@@ -194,3 +210,6 @@ nmap <c-g>a :Gwrite<cr>
 nmap <c-g>ci :Gcommit<cr>
 " git diff
 nmap <c-g>d :Gdiff<cr>
+
+" -------------------------------------------------- "
+" [Ag.vim] "

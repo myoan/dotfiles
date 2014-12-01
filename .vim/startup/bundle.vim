@@ -28,9 +28,13 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'alpaca-tc/alpaca_tags'
+NeoBundle 'LeafCage/yankround.vim'
+NeoBundle 'rking/ag.vim'
+NeoBundle 'vim-scripts/cmdalias.vim'
 
 " [vim.org plugins] "
-NeoBundle 'yanktmp.vim'
+"NeoBundle 'yanktmp.vim'
 "NeoBundle 'YankRing.vim'
 NeoBundle 'sudo.vim'
 
