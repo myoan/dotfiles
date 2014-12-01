@@ -4,8 +4,10 @@
 
 filetype off
 if has('vim_starting')
-	set runtimepath+=$HOME/.vim/bundle/neobundle.vim
-	call neobundle#rc(expand('~/.vim/bundle/'))
+  set runtimepath+=$HOME/.vim/bundle/neobundle.vim
+  call neobundle#begin(expand('~/.vim/bundle/'))
+  NeoBundleFetch 'Shougo/neobundle.vim'
+  call neobundle#end()
 endif
 
 let g:neobundle_default_git_protocol='git'

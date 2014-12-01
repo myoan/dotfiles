@@ -31,8 +31,8 @@ set wildmenu wildmode=list:longest,full
 set history=10000
 filetype plugin on
 
-highlight SpecialKey ctermfg=lightgray                    " タブの色
-highlight NonText ctermfg=darkgray                       " 改行の色
+highlight SpecialKey ctermfg=lightgray                " タブの色
+highlight NonText ctermfg=darkgray                    " 改行の色
 highlight ZenkakuSpace cterm=underline ctermfg=white  " 全角スペースの色
 match ZenkakuSpace /　/
 
