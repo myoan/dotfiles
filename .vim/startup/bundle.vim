@@ -17,32 +17,39 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-endwise'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'thoughtbot/vim-rspec'
 NeoBundle 'Keithbsmiley/rspec.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'alpaca-tc/alpaca_tags'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'vim-scripts/cmdalias.vim'
+NeoBundle 'fatih/vim-go.git'
+NeoBundle 'bling/vim-airline'
+"NeoBundle 'scrooloose/syntastic'
+"NeoBundle 'thoughtbot/vim-rspec'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
+
+NeoBundle 'osyo-manga/shabadou.vim'
+NeoBundle 'osyo-manga/vim-watchdogs'
+NeoBundle 'jceb/vim-hier'
+NeoBundle 'codegram/vim-codereview'
+NeoBundle 'rhysd/committia.vim'
+NeoBundle 'kchmck/vim-coffee-script'
 
 " [vim.org plugins] "
-"NeoBundle 'yanktmp.vim'
-"NeoBundle 'YankRing.vim'
 NeoBundle 'sudo.vim'
-
-" [row plugins] "
-"NeoBundle 'global/gtags.vim'
-"NeoBundle 'vimperator'
 
 filetype plugin on
 filetype indent on
