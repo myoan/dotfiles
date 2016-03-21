@@ -42,6 +42,6 @@ let g:plugin_loader_roots = "~/.vimperator/vimperator-plugins/"
 " list plugin
 let g:plugin_loader_plugins = "_libly,feedSomeKeys_3,statusline-toolbar,ldrize_cooperation,migemo_completion"
 "let g:plugin_loader_plugins = "happy_hacking_vimperator"
-set toolbars=nonavigation
+set toolbars=nobookmarks
 
 
