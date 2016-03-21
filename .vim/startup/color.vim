@@ -1,5 +1,6 @@
 syntax enable
 syntax on
 set background=dark
-colorscheme jellybeans
+colorscheme hybrid
+"colorscheme jellybeans
 "colorscheme solarized

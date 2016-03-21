@@ -1,9 +1,9 @@
 " ================================================== "
-" [ vim setting configure ] "
+" [ vim setting configuration ] "
 " ================================================== "
 
 " -------------------------------------------------- "
-" [ config ] "
+" [ configuration ] "
 set encoding=utf-8
 set number
 set title
@@ -18,6 +18,9 @@ set noswapfile
 set laststatus=2
 set t_Co=256
 
+let mapleader = "\<Space>"
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
 map <c-a> ^
 map <c-e> $
 nnoremap j gj
@@ -36,83 +39,85 @@ highlight NonText ctermfg=darkgray                    " 改行の色
 highlight ZenkakuSpace cterm=underline ctermfg=white  " 全角スペースの色
 match ZenkakuSpace /　/
 
+nnoremap Y y$
+set display=lastline
+set showmatch
+set matchtime=1
+
+" LeaderをSpaceキーにする
+nnoremap <Space> <Nop>
+
+noremap! ¥ \
+noremap! \ ¥
+
 " -------------------------------------------------- "
-" [ js config ] "
+" [ macvim configuration ] "
+
+if has('gui_macvim')
+    set transparency=6
+    set guioptions=c
+    set guifont=MesloLGSDZ-RegularForPowerline:h12
+    "set guifont=MesloLGSDZ-RegularForPowerline:h9
+    set lines=9999 columns=9999
+    " open macvim at full screen mode
+    "autocmd BufEnter * macaction performZoom:
+    inoremap ¥ \
+    " カーソルが一番上や下に移動した時のビープ音を消す＆画面フラッシュも消す
+    set vb t_vb=
+endif
+
+" -------------------------------------------------- "
+" [ js configuration ] "
 autocmd FileType javascript setl ts=2
 autocmd FileType javascript setl expandtab
 autocmd FileType javascript setl shiftwidth=2
 autocmd FileType javascript noremap <buffer> <C-m> :<C-u>!/usr/local/bin/gjslint %<cr>
 " -------------------------------------------------- "
-" [ ruby config ] "
+" [ ruby configuration ] "
 autocmd FileType ruby setl expandtab
 autocmd FileType ruby setl shiftwidth=2
 autocmd FileType ruby setl ts=2
 
 " -------------------------------------------------- "
-" [ ruby config ] "
+" [ ruby configuration ] "
 autocmd FileType ruby setl ts=2
 autocmd FileType ruby setl expandtab
 autocmd FileType ruby setl shiftwidth=2
 
 " -------------------------------------------------- "
-" [ perl config ] "
+" [ perl configuration ] "
 autocmd FileType perl setl ts=4
 autocmd FileType perl setl expandtab
 autocmd FileType perl setl shiftwidth=4
 
 " -------------------------------------------------- "
-" [ search config ] "
+" [ search configuration ] "
 set hlsearch
 nmap <Esc><Esc> :nohlsearch<Enter>
 
 " -------------------------------------------------- "
-" [ status line config ] "
+" [ status line configuration ] "
 set statusline=%n\:%y%F\ \|%{(&fenc!=''?&fenc:&enc).'\|'.&ff.'\|'}%m%r%=%l/%L
 highlight StatusLine term=None cterm=None ctermfg=black ctermbg=gray
 set laststatus=2
 
 " -------------------------------------------------- "
-" [ window operation config ] "
-nnoremap <C-f> <Nop>
-nmap <C-f>s :split<CR>
-nmap <C-f>v :vsplit<CR>
-nnoremap <C-f>j <C-w>j
-nnoremap <C-f>k <C-w>k
-nnoremap <C-f>l <C-w>l
-nnoremap <C-f>h <C-w>h
-nnoremap <C-f><C-J> <C-w>J
-nnoremap <C-f><C-K> <C-w>K
-nnoremap <C-f><C-L> <C-w>L
-nnoremap <C-f><C-H> <C-w>H
+" [ window operation configuration ] "
+nnoremap <C-j> <Nop>
+nmap <C-j>s :split<CR>
+nmap <C-j>v :vsplit<CR>
+nnoremap <C-j><C-j> <C-w>j
+nnoremap <C-j><C-k> <C-w>k
+nnoremap <C-j><C-l> <C-w>l
+nnoremap <C-j><C-h> <C-w>h
+nnoremap <C-j>= <C-w>=
 
 " ================================================== "
-" [ plugin configure ] "
+" [ plugin configuration ] "
 " ================================================== "
 
 " -------------------------------------------------- "
-" [global config] "
-" close search result
-"nmap <C-q> <C-w><C-w><C-w>q
-" use gtags
-"nmap <c-g> :Gtags 
-" move next search results.
-"nmap <C-n> :cn<CR>
-" move previous search results.
-"nmap <C-p> :cp<CR>
-":set transparency=5
-
-" -------------------------------------------------- "
-" [yanktmp config] "
-map <silent> ty :call YanktmpYank()<CR> 
-map <silent> tp :call YanktmpPaste_p()<CR> 
-
-"" -------------------------------------------------- "
-"" [yankring config] "
-"let g:yankring_manual_clipboard_check=0
-"let g:yankring_history_dir = '~/.vim/tmp'
-
-" -------------------------------------------------- "
-" [yankound config] "
+" [yankround configuration] "
 let g:yankround_max_history = 10000
 nmap p <Plug>(yankround-p)
 nmap P <Plug>(yankround-P)
@@ -120,33 +125,6 @@ nmap gp <Plug>(yankround-gp)
 nmap gP <Plug>(yankround-gP)
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
-
-" -------------------------------------------------- "
-" [Unite] "
-"let g:unite_enable_split_vertically=1
-nnoremap [unite] <Nop>
-let g:unite_enable_start_insert=1
-"map <Leader>u [unite]
-noremap <C-f><C-n> :<C-u>Unite buffer<Space>
-
-" show buffer
-noremap <C-f><C-b> :Unite buffer -buffer-name=file<CR>
-noremap <C-f><C-b><C-v> :Unite buffer vsplitswitch -buffer-name=file<CR>
-noremap <C-f><C-b><C-s> :Unite buffer splitswitch -buffer-name=file<CR>
-
-" show file from current dir
-noremap <C-f><C-f> :Unite file -buffer-name=file<CR>
-noremap <C-f><C-f><C-v> :Unite file vsplitswitch -buffer-name=file<CR>
-noremap <C-f><C-f><C-s> :Unite file splitswitch -buffer-name=file<CR>
-
-" show file history
-noremap <C-f><C-h> :Unite file_mru -buffer-name=file<CR>
-noremap <C-f><C-h><C-v> :Unite file_mru vsplitswitch -buffer-name=file<CR>
-noremap <C-f><C-h><C-s> :Unite file_mru splitswitch -buffer-name=file<CR>
-
-au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
-au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
-"nnoremap <silent> [unite]f :<C-u>Unite<Space>buffer<CR>
 
 " -------------------------------------------------- "
 " [neocomplcache] "
@@ -176,29 +154,14 @@ if has('conceal')
 let g:neocomplcache_snippets_dir = '~/.vim/neosnippets'
 
 " -------------------------------------------------- "
-" [vim-rspec] "
-
-let g:rspec_runner = "os_x_iterm"
-let g:rspec_command = "bundle exec rspec"
-
-map <C-t><C-t> :call RunCurrentSpecFile()<CR>
-map <C-t><C-s> :call RunNearestSpec()<CR>
-map <C-t><C-l> :call RunLastSpec()<CR>
-map <C-t><C-a> :call RunAllSpecs()<CR>
-
-" -------------------------------------------------- "
 " [ctrlp] "
 
-let g:ctrlp_working_path_mode = 'a'
+let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_map = '<c-b>'
 let g:ctrlp_cmd = 'CtrlP'
-
-" -------------------------------------------------- "
-" [quick-run] "
-
-"let g:ctrlp_map = '<c-p>'
-"let g:ctrlp_cmd = 'CtrlP'
-
+map <C-c> :CtrlPClearCache<CR>
+map <C-l> :CtrlPLine<CR>
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:100,results:100'
 
 " -------------------------------------------------- "
 " [fugitive] "
@@ -212,4 +175,65 @@ nmap <c-g>ci :Gcommit<cr>
 nmap <c-g>d :Gdiff<cr>
 
 " -------------------------------------------------- "
-" [Ag.vim] "
+" [syntax check] "
+
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 0
+"let g:syntastic_auto_loc_list            = 1
+"let g:syntastic_ruby_rubocop_exec = "/Users/motoki.yoan/.rbenv/versions/2.0.0-p481/bin/rubocop .ruby-style.yml"
+"let g:syntastic_mode_map = {
+"    \ "mode": "active",
+"    \"active_filetypes": ["ruby"],
+"    \"passive_filetypes": [] }
+"let g:syntastic_ruby_checkers = ["rubocop"]
+
+" -------------------------------------------------- "
+" [watchdogs] "
+"
+"let g:quickrun_config = {
+"\  "ruby/watchdogs_checker" : {
+"\    "type" : "watchdogs_checker/rubocop"
+"\  },
+"\  "watchdogs_checker/rubocop" : {
+"\    "cmdopt" : "-c .ruby-style.yml"
+"\  },
+"\}
+"
+"" 書き込み後にシンタックスチェックを行う
+"let g:watchdogs_check_BufWritePost_enables = {
+"\   "ruby"     : 1,
+"\}
+"
+"call watchdogs#setup(g:quickrun_config)
+
+" -------------------------------------------------- "
+" [spell check] "
+
+:set spelllang=en,cjk
+
+fun! s:SpellConf()
+  redir! => syntax
+  silent syntax
+  redir END
+
+  set spell
+
+  if syntax =~? '/<comment\>'
+    syntax spell default
+    syntax match SpellNotAscii /\<\A\+\>/ contains=@NoSpell transparent containedin=Comment contained-
+    syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent containedin=Comment contained
+  else
+    syntax spell toplevel
+    syntax match SpellNotAscii /\<\A\+\>/ contains=@NoSpell transparent
+    syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent
+  endif
+
+  syntax cluster Spell add=SpellNotAscii,SpellMaybeCode
+endfunc
+
+augroup spell_check
+  autocmd!
+  autocmd BufReadPost,BufNewFile,Syntax * call s:SpellConf()
+augroup END
