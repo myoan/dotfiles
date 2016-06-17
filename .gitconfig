@@ -16,3 +16,9 @@
     pager = "nfs -s | LESSCHARSET=utf-8 less"
     autoCRLF = false
 
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[diff]
+	compactionHeuristic = true

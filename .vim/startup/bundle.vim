@@ -10,6 +10,8 @@ if has('vim_starting')
   call neobundle#end()
 endif
 
+
+call neobundle#begin(expand('~/.vim/bundle/'))
 let g:neobundle_default_git_protocol='git'
 NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -47,9 +49,11 @@ NeoBundle 'jceb/vim-hier'
 NeoBundle 'codegram/vim-codereview'
 NeoBundle 'rhysd/committia.vim'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'terryma/vim-expand-region'
 
 " [vim.org plugins] "
 NeoBundle 'sudo.vim'
+call neobundle#end()
 
 filetype plugin on
 filetype indent on

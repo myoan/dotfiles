@@ -47,21 +47,16 @@ set matchtime=1
 " LeaderをSpaceキーにする
 nnoremap <Space> <Nop>
 
-noremap! ¥ \
-noremap! \ ¥
-
 " -------------------------------------------------- "
 " [ macvim configuration ] "
 
 if has('gui_macvim')
-    set transparency=6
+    set transparency=3
     set guioptions=c
-    set guifont=MesloLGSDZ-RegularForPowerline:h12
-    "set guifont=MesloLGSDZ-RegularForPowerline:h9
+    set guifont=MesloLGSDZ-RegularForPowerline:h10
     set lines=9999 columns=9999
     " open macvim at full screen mode
     "autocmd BufEnter * macaction performZoom:
-    inoremap ¥ \
     " カーソルが一番上や下に移動した時のビープ音を消す＆画面フラッシュも消す
     set vb t_vb=
 endif
@@ -207,6 +202,23 @@ nmap <c-g>d :Gdiff<cr>
 "\}
 "
 "call watchdogs#setup(g:quickrun_config)
+
+
+" -------------------------------------------------- "
+" [vim airline] "
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+set laststatus=2
+"let g:airline_theme = 'molokai'
+let g:airline_theme = "jellybeans"
+"au VimEnter * AirlineTheme powerlineish
+
+" -------------------------------------------------- "
+" [vim-expand-region] "
+"
+"map K <Plug>(expand_region_expand)
+"map J <Plug>(expand_region_shrink)
 
 " -------------------------------------------------- "
 " [spell check] "
