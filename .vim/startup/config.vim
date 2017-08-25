@@ -17,14 +17,6 @@ set autoindent smartindent
 set noswapfile
 set laststatus=2
 set t_Co=256
-
-let mapleader = "\<Space>"
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :q<CR>
-map <c-a> ^
-map <c-e> $
-nnoremap j gj
-nnoremap k gk
 set ignorecase
 set wildmode=longest:full,full
 
@@ -44,21 +36,19 @@ set display=lastline
 set showmatch
 set matchtime=1
 
-" LeaderをSpaceキーにする
-nnoremap <Space> <Nop>
-
 " -------------------------------------------------- "
 " [ macvim configuration ] "
 
 if has('gui_macvim')
     set transparency=3
     set guioptions=c
-    set guifont=MesloLGSDZ-RegularForPowerline:h10
+    set guifont=MesloLGSDZ-RegularForPowerline:h9
     set lines=9999 columns=9999
     " open macvim at full screen mode
     "autocmd BufEnter * macaction performZoom:
     " カーソルが一番上や下に移動した時のビープ音を消す＆画面フラッシュも消す
     set vb t_vb=
+    let $PYTHON3_DLL="$HOME/.pyenv/shims/python"
 endif
 
 " -------------------------------------------------- "
@@ -86,6 +76,11 @@ autocmd FileType perl setl expandtab
 autocmd FileType perl setl shiftwidth=4
 
 " -------------------------------------------------- "
+" [ go configuration ] "
+autocmd FileType go setl ts=2
+autocmd FileType go setl shiftwidth=2
+
+" -------------------------------------------------- "
 " [ search configuration ] "
 set hlsearch
 nmap <Esc><Esc> :nohlsearch<Enter>
@@ -95,17 +90,6 @@ nmap <Esc><Esc> :nohlsearch<Enter>
 set statusline=%n\:%y%F\ \|%{(&fenc!=''?&fenc:&enc).'\|'.&ff.'\|'}%m%r%=%l/%L
 highlight StatusLine term=None cterm=None ctermfg=black ctermbg=gray
 set laststatus=2
-
-" -------------------------------------------------- "
-" [ window operation configuration ] "
-nnoremap <C-j> <Nop>
-nmap <C-j>s :split<CR>
-nmap <C-j>v :vsplit<CR>
-nnoremap <C-j><C-j> <C-w>j
-nnoremap <C-j><C-k> <C-w>k
-nnoremap <C-j><C-l> <C-w>l
-nnoremap <C-j><C-h> <C-w>h
-nnoremap <C-j>= <C-w>=
 
 " ================================================== "
 " [ plugin configuration ] "
@@ -157,6 +141,7 @@ let g:ctrlp_cmd = 'CtrlP'
 map <C-c> :CtrlPClearCache<CR>
 map <C-l> :CtrlPLine<CR>
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:100,results:100'
+"let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 
 " -------------------------------------------------- "
 " [fugitive] "
@@ -210,8 +195,7 @@ nmap <c-g>d :Gdiff<cr>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 set laststatus=2
-"let g:airline_theme = 'molokai'
-let g:airline_theme = "jellybeans"
+let g:airline_theme = 'molokai'
 "au VimEnter * AirlineTheme powerlineish
 
 " -------------------------------------------------- "
@@ -223,6 +207,7 @@ let g:airline_theme = "jellybeans"
 " -------------------------------------------------- "
 " [spell check] "
 
+:set spell
 :set spelllang=en,cjk
 
 fun! s:SpellConf()
@@ -234,11 +219,9 @@ fun! s:SpellConf()
 
   if syntax =~? '/<comment\>'
     syntax spell default
-    syntax match SpellNotAscii /\<\A\+\>/ contains=@NoSpell transparent containedin=Comment contained-
     syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent containedin=Comment contained
   else
     syntax spell toplevel
-    syntax match SpellNotAscii /\<\A\+\>/ contains=@NoSpell transparent
     syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent
   endif
 

@@ -30,9 +30,14 @@ NeoBundle 'rking/ag.vim'
 NeoBundle 'vim-scripts/cmdalias.vim'
 NeoBundle 'fatih/vim-go.git'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
+NeoBundle 'vim-jp/vim-go-extra'
+NeoBundle 'solarnz/thrift.vim'
+NeoBundle 'elixir-lang/vim-elixir'
 "NeoBundle 'scrooloose/syntastic'
 "NeoBundle 'thoughtbot/vim-rspec'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'hecal3/vim-leader-guide'
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
 \     'windows' : 'tools\\update-dll-mingw',
@@ -44,12 +49,15 @@ NeoBundle 'Shougo/vimproc.vim', {
 \ }
 
 NeoBundle 'osyo-manga/shabadou.vim'
-NeoBundle 'osyo-manga/vim-watchdogs'
+"NeoBundle 'osyo-manga/vim-watchdogs'
 NeoBundle 'jceb/vim-hier'
 NeoBundle 'codegram/vim-codereview'
 NeoBundle 'rhysd/committia.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'terryma/vim-expand-region'
+NeoBundle 'hashivim/vim-terraform'
+NeoBundle 'nixprime/cpsm'
+NeoBundle 'ElmCast/elm-vim'
 
 " [vim.org plugins] "
 NeoBundle 'sudo.vim'
