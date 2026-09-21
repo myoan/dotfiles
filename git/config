@@ -6,10 +6,10 @@
 	signingkey = B1CADB53D7E4E63A
 [credential "https://github.com"]
 	helper =
-	helper = !/opt/homebrew/bin/gh auth git-credential
+	helper = !gh auth git-credential
 [credential "https://gist.github.com"]
 	helper =
-	helper = !/opt/homebrew/bin/gh auth git-credential
+	helper = !gh auth git-credential
 [alias]
 	br = branch
 	ci = commit
